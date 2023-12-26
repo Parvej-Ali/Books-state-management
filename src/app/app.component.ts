@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BooksService } from './service/books.service';
 import { Store } from '@ngrx/store';
 import {
   selectBookCollection,
@@ -15,7 +14,7 @@ export class AppComponent implements OnInit {
   books$ = this.store.select(selectBooks);
   bookCollection$ = this.store.select(selectBookCollection);
 
-  constructor(private booksService: BooksService, private store: Store) {}
+  constructor(private store: Store) {}
 
   public ngOnInit() {
     this.store.dispatch(BooksApiActions.loadBookList());

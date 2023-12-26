@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BooksService } from '../../service/books.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { BooksApiActions } from '../action/books.actions';
-import { catchError, exhaustMap, map, of } from 'rxjs';
+import { exhaustMap, map } from 'rxjs';
 
 @Injectable()
 export class BooksEffects {
