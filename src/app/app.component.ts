@@ -18,11 +18,7 @@ export class AppComponent implements OnInit {
   constructor(private booksService: BooksService, private store: Store) {}
 
   public ngOnInit() {
-    this.booksService
-      .getBooks()
-      .subscribe((books) =>
-        this.store.dispatch(BooksApiActions.retrievedBookList({ books }))
-      );
+    this.store.dispatch(BooksApiActions.loadBookList());
   }
 
   onAdd(bookId: string) {

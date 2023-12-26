@@ -14,6 +14,8 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { BookCollectionComponent } from './components/book-collection/book-collection.component';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { BooksEffects } from './store/effect/books.effects';
 
 @NgModule({
   declarations: [AppComponent, BookListComponent, BookCollectionComponent],
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
     HttpClientModule,
     MatButtonModule,
+    EffectsModule.forRoot([BooksEffects]),
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 gap-4 m-4 p-6 shadow-md">
+<div class="grid grid-cols-4 gap-4 p-6 shadow-md">
   <div
     class="flex flex-col justify-between gap-4 border p-4 shadow-md"
     *ngFor="let book of books"
@@ -7,7 +7,12 @@
       <span class="text-gray-600 font-bold">{{ book.volumeInfo.title }}</span>
       <span class="text-gray-400"> by {{ book.volumeInfo.authors }}</span>
     </div>
-    <button mat-raised-button (click)="remove.emit(book.id)">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="remove.emit(book.id)"
+      class="whitespace-nowrap"
+    >
       Remove from Collection
     </button>
   </div>
