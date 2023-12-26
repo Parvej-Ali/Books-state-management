@@ -1,0 +1,14 @@
+<div class="grid grid-cols-4 gap-4 m-4 p-6 shadow-md">
+  <div
+    class="flex flex-col justify-between gap-4 border p-4 shadow-md"
+    *ngFor="let book of books"
+  >
+    <div class="flex flex-col gap-2">
+      <span class="text-gray-600 font-bold">{{ book.volumeInfo.title }}</span>
+      <span class="text-gray-400"> by {{ book.volumeInfo.authors }}</span>
+    </div>
+    <button mat-raised-button (click)="add.emit(book.id)">
+      Add to Collection
+    </button>
+  </div>
+</div>

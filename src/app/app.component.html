@@ -1,6 +1,15 @@
 <router-outlet></router-outlet>
-<div class="flex justify-center items-center h-full">
-  <h1 class="text-3xl font-bold px-10 py-4 shadow-2xl w-fit rounded-full">
-    Hello world!
-  </h1>
-</div>
+<h2>Books</h2>
+<app-book-list
+  class="book-list"
+  [books]="(books$ | async)!"
+  (add)="onAdd($event)"
+></app-book-list>
+
+<h2>My Collection</h2>
+<app-book-collection
+  class="book-collection"
+  [books]="(bookCollection$ | async)!"
+  (remove)="onRemove($event)"
+>
+</app-book-collection>
